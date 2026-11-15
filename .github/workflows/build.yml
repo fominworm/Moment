@@ -6,6 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: unzip -q Moment-android.zip
+      - run: echo "org.gradle.jvmargs=-Xmx4g -XX:MaxMetaspaceSize=1g -Dfile.encoding=UTF-8" >> Moment/gradle.properties
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
